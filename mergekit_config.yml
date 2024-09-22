@@ -1,0 +1,17 @@
+
+slices:
+  - sources:
+      - model: jpacifico/Chocolatine-3B-Instruct-DPO-Revised
+        layer_range: [0, 32]
+      - model: microsoft/Phi-3-mini-4k-instruct
+        layer_range: [0, 32]    
+merge_method: slerp
+base_model: jpacifico/Chocolatine-3B-Instruct-DPO-Revised
+parameters:
+  t:
+    - filter: self_attn
+      value: [0, 0.25, 0.5, 0.75, 1]
+    - filter: mlp
+      value: [1, 0.75, 0.5, 0.25, 0]
+    - value: 0.5
+dtype: bfloat16
