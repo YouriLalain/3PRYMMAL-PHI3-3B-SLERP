@@ -6,7 +6,7 @@ library_name: transformers
 tags:
 - mergekit
 - merge
-
+license: apache-2.0
 ---
 # 3PRYMMAL-PHI3-3B-SLERP
 
